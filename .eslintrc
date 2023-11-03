@@ -1,0 +1,46 @@
+{
+  "env": { "es6": true, "node": true },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "eslint-config-prettier",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": { "jsx": true }
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "strict": 0,
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "max-lines": ["error", { "max": 1000 }],
+    "no-console": 0,
+    "no-undef": "error",
+    "object-curly-spacing": ["warn", "always"],
+    "quotes": ["error", "single"],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "multiple", "single", "all"]
+      }
+    ],
+    "@typescript-eslint/camelcase": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/database/**/*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
+}
